@@ -1,0 +1,34 @@
+
+<div class="container">    
+  <div class="row">
+    <div ng-repeat="movie in $ctrl.movies" class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">{{movie.displayName}}</div>
+        <div class="panel-body"><img ng-src="{{movie.photoURL}}"class="center-block" height="200px alt="Movie Image"></div>
+        <div class="panel-footer">
+			<form class="form-horizontal">
+  				<div class="form-group">
+    					<label class="col-sm-2 control-label">${{movie.price.toFixed(2)}}</label>
+					<label class="col-sm-3 control-label">Quantity:</label>
+    					<div class="col-sm-3">
+      					<select class="form-control" id="input{{$index}}">
+    							<option>1</option>
+    							<option>2</option>
+    							<option>3</option>
+    							<option>4</option>
+							<option>5</option>
+							<option>10</option>
+							<option>25</option>
+							<option>100</option>
+  						</select>
+    					</div>
+					<button ng-click="addItems(movie.displayName, $index)" class="btn btn-info control-label">
+						Add to cart <span class="glyphicon glyphicon-shopping-cart "></span>
+					</button>
+  				</div>
+			</form>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>

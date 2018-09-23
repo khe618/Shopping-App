@@ -1,0 +1,36 @@
+<ul class="nav navbar-nav navbar-right">
+	<li data-toggle="modal" data-target="#shoppingCartModal">
+		<a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
+	</li>
+</ul>
+
+<!-- Displays shopping cart and price totals on click -->
+<div class="modal fade" id="shoppingCartModal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+        		<div class="modal-header">
+            		<button type="button" class="close" data-dismiss="modal">&times;</button>
+              	<h4 class="modal-title">Shopping Cart</h4>
+            </div>
+			
+            <div class="modal-body">
+            		<p ng-repeat="item in itemsInCart()">
+					<img ng-src="{{shoppingService.getPhotoURL(item)}}" alt="Movie" height="50px">
+					{{item}}: {{$ctrl.shoppingCart[item]}}
+					<button class="btn btn-default btn-xs pull-right" ng-click="shoppingService.removeItem(item)">
+						<span class="glyphicon glyphicon-remove " ></span>
+					</button>
+				</p>
+				<p>Total Items: {{quantities()}}</p>
+				<p>Total Cost: ${{totalCost().toFixed(2)}}</p>
+				<p ng-repeat="discount in totalDiscounts()">
+					{{discount}}
+				</p>
+           	</div>
+			
+           	<div class="modal-footer">
+           		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+	</div>
+</div> 

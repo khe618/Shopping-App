@@ -1,0 +1,31 @@
+var movies = [{
+	"displayName": "Star Wars Episode IV (DVD)",
+	"photoURL":  "imgs/star_wars_4_dvd.jpg",
+	"price": 20,
+	"format": "DVD"
+}, {
+	"displayName": "Star Wars Episode IV (Blu-Ray)",
+	"photoURL":  "imgs/star_wars_4_bluray.jpeg",
+	"price": 25,
+	"format": "Blu-Ray"
+}, {
+	"displayName": "Star Wars Episode V (DVD)",
+	"photoURL":  "imgs/star_wars_5_dvd.jpg",
+	"price": 20,
+	"format": "DVD"
+}, {
+	"displayName": "Star Wars Episode V (Blu-Ray)",
+	"photoURL":  "imgs/star_wars_5_bluray.jpg",
+	"price": 25,
+	"format": "Blu-Ray"
+}, {
+	"displayName": "Star Wars Episode VI (DVD)",
+	"photoURL":  "imgs/star_wars_6_dvd.jpg",
+	"price": 20,
+	"format": "DVD"
+}, {
+	"displayName": "Star Wars Episode VI (Blu-Ray)",
+	"photoURL":  "imgs/star_wars_6_bluray.jpg",
+	"price": 25,
+	"format": "Blu-Ray"
+}]

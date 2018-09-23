@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html  ng-app="shoppingApp">
+<head>
+	<title>Piratical Liz's Pirate Shop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<!--AngularJS 1.6 -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript" src="movies.json"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="index.js"></script>
+<script type="text/javascript" src="shoppingApp.service.js"></script>
+<script type="text/javascript" src="store-items.component.js"></script>
+<script type="text/javascript" src="shopping-cart.component.js"></script>
+
+<body>
+
+	<div class="jumbotron">
+  		<div class="container text-center">
+    			<h1>Piratical Liz's Pirate Shop</h1>      
+ 		</div>
+	</div>
+	
+	<nav class="navbar navbar-inverse">
+ 		<div class="container-fluid">
+    			<div class="navbar-header">
+				<!-- collapse navbar when screen width is too small -->
+      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>                        
+      			</button>
+   	 		</div>
+    			<div class="collapse navbar-collapse" id="navbar">
+      			<ul class="nav navbar-nav">
+        				<li class="active"><a href="#">Home</a></li>
+        				<li data-toggle="modal" data-target="#discountModal"><a href="#">Discounts</a></li>
+      			</ul>
+				<!-- Displays discounts on click -->
+				<div class="modal fade" id="discountModal" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+        						<div class="modal-header">
+            						<button type="button" class="close" data-dismiss="modal">&times;</button>
+              					<h4 class="modal-title">Shopping Cart</h4>
+            					</div>
+            					<div class="modal-body">
+								<dl>
+									<dt>DVD Discount:</dt>
+									<dd>Save 10% on DVDs when you buy all the DVDs</dd>
+									<br>
+									<dt>Blu-Ray Discount:</dt>
+									<dd>Save 15% on Blu-Rays when you buy all the Blu-Rays</dd>
+									<br>
+									<dt>Big Sale Discount:</dt>
+									<dd>Save 5% on all items when you buy 100 or more items (applied after first two discount)</dd>
+								</dl>
+           					</div>
+           					<div class="modal-footer">
+           						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            					</div>
+         				</div>
+					</div>
+				</div> 
+				
+				<shopping-cart></shopping-cart>
+    			</div>
+  		</div>
+	</nav>
+	
+	<store-items></store-items>
+</body>
+</html>

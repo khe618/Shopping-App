@@ -1,0 +1,23 @@
+{
+  "name": "Shopping-App",
+  "version": "1.0.0",
+  "description": "A shopping app for pirated Star Wars movies",
+  "main": "app.js",
+  "engines": {
+    "node": ">7.10.1"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "lint": "jshint --exclude node_modules .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kenny",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "jasmine-core": "^3.2.1",
+    "karma-jasmine": "^1.1.2"
+  }
+}
