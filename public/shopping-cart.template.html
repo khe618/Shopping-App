@@ -14,15 +14,43 @@
             </div>
 			
             <div class="modal-body">
-            		<p ng-repeat="item in itemsInCart()">
-					<img ng-src="{{shoppingService.getPhotoURL(item)}}" alt="Movie" height="50px">
+            		<!--<p ng-repeat="item in itemsInCart()">
+					<img  ng-src="{{shoppingService.getPhotoURL(item)}}" alt="Movie" height="50px">
 					{{item}}: {{$ctrl.shoppingCart[item]}}
 					<button class="btn btn-default btn-xs pull-right" ng-click="shoppingService.removeItem(item)">
 						<span class="glyphicon glyphicon-remove " ></span>
 					</button>
-				</p>
+					<span class="pull-right">
+						${{displayTwoDigits(itemCost(item))}}
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					</span>
+				</p>-->
+				<table class="table">
+    					<thead>
+      					<tr>
+        						<th>Product</th>
+        						<th>Quantity</th>
+        						<th>Price</th>
+							<th></th>
+      					</tr>
+    					</thead>
+    					<tbody>
+      					<tr ng-repeat="item in itemsInCart()">
+        						<td>
+								<img  ng-src="{{shoppingService.getPhotoURL(item)}}" alt="Movie" height="50px"> {{item}}
+							</td>
+        						<td>{{$ctrl.shoppingCart[item]}}</td>
+        						<td>{{displayTwoDigits(itemCost(item))}}</td>
+							<td>
+								<button class="btn btn-default btn-xs pull-right" ng-click="shoppingService.removeItem(item)">
+									<span class="glyphicon glyphicon-remove " ></span>
+								</button>
+							</td>
+      					</tr>
+    					</tbody>
+  				</table>
 				<p>Total Items: {{quantities()}}</p>
-				<p>Total Cost: ${{totalCost().toFixed(2)}}</p>
+				<p>Total Cost: ${{displayTwoDigits(totalCost())}}</p>
 				<p ng-repeat="discount in totalDiscounts()">
 					{{discount}}
 				</p>

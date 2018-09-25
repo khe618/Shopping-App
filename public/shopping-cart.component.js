@@ -10,6 +10,7 @@ angular.
 		this.blurays = shoppingService.getTitlesByFormat("Blu-Ray");
 		
 		$scope.shoppingService = shoppingService; 
+		$scope.displayTwoDigits = displayTwoDigits
 		
 		/**
 		 * Gets the items in the shopping cart that have a non-zero quantity
@@ -69,13 +70,13 @@ angular.
 			if (isSubarray(self.dvds, cartItems)){
 				discount = $scope.costOfItems(self.dvds) * 0.1;
 				totalDiscount += discount;
-				discountList.push("DVD Discount: -$" + discount.toFixed(2)); //FIXME: ROUNDING ERROR
+				discountList.push("DVD Discount: -$" + displayTwoDigits(discount)); 
 			}
 			//All Blu-Rays discount
 			if (isSubarray(self.blurays, cartItems)){
 				discount = $scope.costOfItems(self.blurays) * 0.15;
 				totalDiscount += discount;
-				discountList.push("Blu-Ray Discount: -$" + discount.toFixed(2)); //FIXME
+				discountList.push("Blu-Ray Discount: -$" + displayTwoDigits(discount)); 
 			}
 			
 			totalCost -= totalDiscount;
@@ -83,13 +84,13 @@ angular.
 				discount = totalCost * 0.05;
 				totalDiscount += discount;
 				totalCost -= discount;
-				discountList.push("Big Sale Discount: -$" + discount.toFixed(2));  //FIXME
+				discountList.push("Big Sale Discount: -$" + displayTwoDigits(discount));  
 			}
 			
 			//display savings and cost after savings if there are discounts
 			if (discountList.length > 0){
-				discountList.push("Total Savings: $" + totalDiscount.toFixed(2));
-				discountList.push("Total Cost After Discounts: $" + totalCost.toFixed(2));
+				discountList.push("Total Savings: $" + displayTwoDigits(totalDiscount));
+				discountList.push("Total Cost After Discounts: $" + displayTwoDigits(totalCost));
 			}
 			return discountList;
 		}

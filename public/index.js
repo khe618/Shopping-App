@@ -21,3 +21,16 @@ function sum(arr){
 function isSubarray(arr1, arr2){
 	return arr1.every(val => arr2.includes(val))
 }
+
+/**
+ * Displays a number rounded to its hundredths place with trailing zeroes, useful for 
+ * displaying amounts of money
+ * Although it does not occur in the given data due to the numbers being large enough,
+ * the .toFixed function is not guaranteed to round correctly, so we first round the number
+ * before calling .toFixed 
+ * @return {string} The number rounded to two decimal places
+ */
+function displayTwoDigits(num){
+	var roundedNumber = +(Math.round(num + "e+2")  + "e-2")
+	return roundedNumber.toFixed(2)
+}
